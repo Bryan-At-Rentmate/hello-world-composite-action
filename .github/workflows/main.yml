@@ -9,6 +9,7 @@ jobs:
       - id: foo
         uses: Bryan-At-Rentmate/hello-world-composite-action@v3 
         with:
-          who-to-greet: 'Sammy the dog'
+          who-to-greet: 'Bryan A'
+          whos-ag: 24
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
