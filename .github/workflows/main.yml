@@ -10,6 +10,6 @@ jobs:
         uses: Bryan-At-Rentmate/hello-world-composite-action@v4
         with:
           who-to-greet: 'Bryan A'
-          whos-ag: 24
+          whos-age: 24
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
