@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses: Bryan-At-Rentmate/hello-world-composite-action@v3 
+        uses: Bryan-At-Rentmate/hello-world-composite-action@v4
         with:
           who-to-greet: 'Bryan A'
           whos-ag: 24
