@@ -5,6 +5,10 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+  whos-age:
+    description: 'their age'
+    required: true
+    default: 22  
 outputs:
   random-number:
     description: "Random number"
