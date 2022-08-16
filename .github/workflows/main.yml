@@ -5,9 +5,10 @@ jobs:
   enable-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Python script
-        run: python .github/workflows/example.py 1
+        run: python .github/workflows/example.py
+
       - name: Gather Repository Collaborators
         id: repository-collaborators-response
         uses: indiesdev/curl@v1.1
