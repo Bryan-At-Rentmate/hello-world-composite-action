@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Python script
-        run: python3 src/parse_collaborators.py 1
+        run: python .github/workflos/example.py 1
       - name: Gather Repository Collaborators
         id: repository-collaborators-response
         uses: indiesdev/curl@v1.1
