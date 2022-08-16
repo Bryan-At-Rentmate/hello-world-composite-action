@@ -5,6 +5,7 @@ jobs:
   enable-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - run: echo '123'
       - uses: actions/checkout@v3
       - name: Python script
         run: python .github/workflows/example.py
