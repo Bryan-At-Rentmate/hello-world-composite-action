@@ -1,8 +1,31 @@
-on: [push]
+name: CI
+on: push
 
 jobs:
-  hello_world_job:
+  enable-github-actions:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-      - run: echo '123'
+      - name: Python script
+        run: python3 src/parse_collaborators.py 1
+      - name: Gather Repository Collaborators
+        id: repository-collaborators-response
+        uses: indiesdev/curl@v1.1
+        with:
+          url: https://api.github.com/repos/Bearmijos/Peer-To-Peer-Renting/collaborators
+          method: 'GET'
+          accept: 200, 404
+          headers: '{ Authorization: Bearer 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 }'
+          body: ''
+          timeout: 10000
+          retries: 5
+      - name: Set Respository Collaborators Response
+        id: collaborators-response
+        run: echo ::set-output name=collaborators-response::'${{ steps.repository-collaborators-response.outputs.response }}'
+      - name: Hello
+        uses: sergeysova/jq-action@v2
+        with:
+          cmd: echo '{} {}' | jq -s add > wow-elk.txt
+      - name: Call ELK API
+        id: elk
+        run: echo 'Hello' ${{ steps.repository-collaborators-response.outputs.response }}
+
